@@ -8,9 +8,27 @@ import java.io.FileNotFoundException;
 public class PersonInfo {
 
     public static void main(String[] args) throws IOException{
-        Person st1=new Person();
-        st1.menu();
+      //  Person st1=new Person();
+       // st1.menu();
+         menu ();
     }
+public static void menu() throws IOException{
+byte mkey = 0;
+stock st1;
+Trans tr1;
+ while(mkey!=5) {
+            mkey=(new Scanner( JOptionPane.showInputDialog( "Select 1-Stock, 2-Transaction, 3-Quit  " ) )).nextByte();
+            switch(mkey) {
+                case 1: st1= new Stock(); st1.menu(); break;
+                case 2: tr1=new Trans(); tr1.transproc(); tr1.listproc();break;
+                case 3: JOptionPane.showInputDialog("Quiting"); break;
+                
+                default: JOptionPane.showInputDialog("Allowable keys 1-3 only"); break;
+            }
+        }
+    }
+
+
 }
 
 class PersonData {
